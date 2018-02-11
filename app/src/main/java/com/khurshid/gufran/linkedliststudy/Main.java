@@ -20,6 +20,19 @@ public class Main {
 
         linkedList.printList();
 
+        //linkedList.push(3);
+
+        // linkedList.printList();
+        System.out.println("--------------------------------");
+
+        // linkedList.insertAfter(second, 73);
+        linkedList.append(91);
+        linkedList.append(14);
+        linkedList.append(83);
+
+
+        linkedList.printList();
+
 
     }
 }
