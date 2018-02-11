@@ -72,4 +72,70 @@ public class LinkedList {
     }
 
 
+    /* Given a key, deletes the first occurrence of key in linked list */
+    public void deleteKey(int key) {
+
+        Node temp = head;
+        Node prev = null;
+
+        //first head element is the data
+        // If head node itself holds the key to be deleted
+        if (temp != null && temp.data == key) {
+            head = temp.next;
+            return;
+        }
+
+        // Search for the key to be deleted, keep track of the
+        // previous node as we need to change temp.next
+        while (temp != null && temp.data != key) {
+            prev = temp;
+            temp = temp.next;
+        }
+
+        if (temp == null) {
+            System.out.println("Key not found");
+            return;
+        }
+
+        // Unlink the node from linked list
+        prev.next = temp.next;
+
+    }
+
+
+    public void deleteData(int position) {
+        int index = 0;
+
+        Node temp = head;
+        Node prev = null;
+
+        if (position == 0) {
+            head = temp.next;
+            return;
+        }
+
+        while (temp != null) {
+            if (position == index) {
+                prev.next = temp.next;
+            }
+            prev = temp;
+            temp = temp.next;
+            index++;
+        }
+
+    }
+
+    public void doublePointer() {
+        Node temp = head;
+        Node prev = null;
+
+        while (temp != null) {
+            System.out.print("Prev " + ((prev != null) ? prev.data : "NULL ") + " , ");
+            System.out.println("Temp " + temp.data);
+
+            prev = temp;
+            temp = temp.next;
+        }
+
+    }
 }

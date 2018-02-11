@@ -5,7 +5,7 @@ package com.khurshid.gufran.linkedliststudy;
  */
 
 public class Node {
-    int data;
+    int data = -1;
     Node next;
 
     public Node(int data) {
